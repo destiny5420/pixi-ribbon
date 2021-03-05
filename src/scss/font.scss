@@ -1,0 +1,15 @@
+/*!
+ *  The mixin of font
+ */
+
+@mixin f-center() {
+  text-align: center;
+}
+
+@mixin f-left() {
+  text-align: left;
+}
+
+@mixin f-right() {
+  text-align: right;
+}

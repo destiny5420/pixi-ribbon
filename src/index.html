@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh" class="stop">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta name="viewport" content="<%= htmlWebpackPlugin.options.viewport %>" />
+    <meta name="description" content="<%= htmlWebpackPlugin.options.description %>" />
+    <meta name="keywords" content="<%= htmlWebpackPlugin.options.keywords %>" />
+    <meta property="og:title" content="<%= htmlWebpackPlugin.options.title %>" />
+    <meta property="og:description" content="<%= htmlWebpackPlugin.options.description %>" />
+    <meta property="og:type" content="<%= htmlWebpackPlugin.options.ogtype %>" />
+    <meta property="og:site_name" content="<%= htmlWebpackPlugin.options.title %>" />
+    <meta property="og:image" content="<%= htmlWebpackPlugin.options.ogimage %>" />
+    <meta property="og:url" content="<%= htmlWebpackPlugin.options.ogurl %>" />
+    <meta property="og:locale" content="<%= htmlWebpackPlugin.options.oglocale %>" />
+    <link rel="stylesheet" href="./assets/css/reset.min.css" />
+    <link rel="icon" type="image/x-icon" href="<%= htmlWebpackPlugin.options.icon %>" title="" />
+    <link rel="stylesheet" href="<%= htmlWebpackPlugin.options.includeFont %>" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="pixi-container"></div>
+      <header>RIBBON</header>
+    </div>
+  </body>
+</html>

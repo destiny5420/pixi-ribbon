@@ -1,0 +1,151 @@
+/*!
+ * Commonly used mix / class / function
+ * Can be used to all the project.
+ */
+
+// ===== RWD =====
+$pad-width: 1024px;
+$mobile-width: 768px;
+
+@mixin pc() {
+  @media screen and (min-width: $pad-width) {
+    @content;
+  }
+}
+
+@mixin pad() {
+  @media all and (min-width: $mobile-width) and (max-width: $pad-width) {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @media screen and (max-width: $mobile-width) {
+    @content;
+  }
+}
+
+// ===== Mixin =====
+@mixin border($width: 1px) {
+  box-shadow: 0 0 2px #000;
+}
+
+@mixin block() {
+  @include size(100%, 500px);
+}
+
+@mixin size($w, $h: $w) {
+  width: $w;
+  height: $h;
+}
+
+@mixin independent($zIndex: 1) {
+  z-index: $zIndex;
+  position: absolute;
+  content: '';
+}
+
+@mixin flex-center($dir: row) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin aspect-ratio($w, $h) {
+  padding-bottom: ($h / $w) * 100%;
+}
+
+// ===== Padding Bottom (img / video) =====
+.aspect-ratio {
+  height: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.aspect-ratio-obj {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+// ===== Mixin =====
+.img-h {
+  img {
+    height: 100%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin: 0 auto;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.img-w {
+  img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+// ===== Display =====
+.pc-only {
+  @include mobile() {
+    display: none !important;
+  }
+}
+
+.mobile-only {
+  display: none !important;
+
+  @include mobile() {
+    display: block !important;
+  }
+}
+
+.display-none {
+  display: none;
+}
+
+// - Font Size
+$lg-size: 1920;
+$md-size: 1440;
+$ms-size: 1024;
+$sm-size: 375;
+
+@function to-per($val) {
+  @return ($val / $md-size) * 100%;
+}
+
+@function to-per-mobile($val) {
+  @return ($val / $sm-size) * 100%;
+}
+
+@function to-vw($val) {
+  @return ($val / $md-size) * 100vw;
+}
+
+@function to-vw-pad($val) {
+  @return ($val / $ms-size) * 100vw;
+}
+
+@function to-vw-mobile($val) {
+  @return ($val / $sm-size) * 100vw;
+}
+
+@function to-vh($val) {
+  @return ($val / 768) * 100vh;
+}
+
+// ===== Other =====
+.loading-lock {
+  @include size(100%, 100%);
+
+  position: fixed;
+  overflow: hidden;
+}
