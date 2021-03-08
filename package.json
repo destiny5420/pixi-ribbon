@@ -1,6 +1,6 @@
 {
-  "name": "gowavedaily",
-  "version": "1.0.0",
+  "name": "pixi-ribbon",
+  "version": "0.1.0",
   "main": ".js/main.js",
   "scripts": {
     "dev": "webpack-dev-server --config webpack.dev.js",
