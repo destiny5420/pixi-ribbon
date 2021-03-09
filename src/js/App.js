@@ -15,7 +15,8 @@ function App() {
   const pixiContainer = document.getElementById('pixi-container')
   const ribbonCount = 250
   const paddingSize = 50
-  const imgPath = '../assets/images/rect_sm.jpg'
+  const imgPath = '../Pixi-Ribbon/assets/images/rect_sm.jpg'
+  console.log('imgPath: ', imgPath)
   self.ribbonManager = new RibbonManager(pixiContainer, ribbonCount, paddingSize, imgPath)
 
   eventBinding.call(this)
